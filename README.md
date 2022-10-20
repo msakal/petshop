@@ -41,9 +41,19 @@ rafce - > cria a const
 
 # Criando as rotas
 
-- Criar branch 02-roteamento ou rota
+- Criar branch 02-roteamento ou rota.
+
 - Instalar a lib: react-router-dom@5 (npm install react-router-dom@5)
+
 - Modifique o App.jsx para o uso dos recursos do react-router-dom
+
+  1. Realizando a importação dos recursos da lib
+     `import { BrowserRouter, Route, Switch } from "react-router-dom";`
+  2. Envolver todo o conteúdo do App.jsx dentro do **BowserRouter**
+  3. Cada componente qie funciona como "página ou tela" deve estar dentro de um **Route**
+  4. Os `<Route>` devem estar dentro de um `<Switch>` para que aconteça a troca entre componentes ao navegar
+     **Obs:** não coloque NADA além de `<Route>` no `<Switch>`.
+
 - Modifique o componente Menu.jsx para que use a navegação do react-router-dom
 
 # facilitador para passar o nome do component

@@ -7,13 +7,13 @@ const Menu = () => {
       <NavLink exact to="/" activeClassName={estilos.ativo}>
         Blog
       </NavLink>
-      <NavLink to="/Produtos" activeClassName={estilos.ativo}>
+      <NavLink to="/produtos" activeClassName={estilos.ativo}>
         Produtos
       </NavLink>
-      <NavLink to="/Sobre" activeClassName={estilos.ativo}>
+      <NavLink to="/sobre" activeClassName={estilos.ativo}>
         Sobre
       </NavLink>
-      <NavLink to="/Contato" activeClassName={estilos.ativo}>
+      <NavLink to="/contato" activeClassName={estilos.ativo}>
         Contato
       </NavLink>
     </nav>
