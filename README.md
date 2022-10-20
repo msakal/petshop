@@ -32,3 +32,7 @@ Telas de até o tamanho X (max-width)
 ## Emoji - getemoji.com
 
 Usando a seguinte classe.: titulo_secao::before { content: "imagem" }
+
+## Atalho
+
+rafce - > cria a const
