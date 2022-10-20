@@ -37,4 +37,4 @@ Usando a seguinte classe.: titulo_secao::before { content: "imagem" }
 
 rafce - > cria a const
 
-## Componentes ->> <ListaPosts />
+## Componentes ->> Ex: <ListaPosts />
