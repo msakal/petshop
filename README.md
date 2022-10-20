@@ -38,3 +38,20 @@ Usando a seguinte classe.: titulo_secao::before { content: "imagem" }
 rafce - > cria a const
 
 ## Componentes ->> Ex: <ListaPosts />
+
+# Criando as rotas
+
+- Criar branch 02-roteamento ou rota
+- Instalar a lib: react-router-dom@5 (npm install react-router-dom@5)
+- Modifique o App.jsx para o uso dos recursos do react-router-dom
+- Modifique o componente Menu.jsx para que use a navegação do react-router-dom
+
+# facilitador para passar o nome do component
+
+Exemplo Versões componentes:
+SEM: <Route exact path="/"> <Home /> </Route>
+COM: <Route exact path="/" component={Home}> </Route>
+
+# NavLink
+
+- deixa a página assincroma, não fica recarregando a cada clique no componente.
