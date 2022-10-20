@@ -28,3 +28,7 @@ Telas a partir de X tamanho (min-width)
 ### Desktop First:
 
 Telas de até o tamanho X (max-width)
+
+## Emoji - getemoji.com
+
+Usando a seguinte classe.: titulo_secao::before { content: "imagem" }
