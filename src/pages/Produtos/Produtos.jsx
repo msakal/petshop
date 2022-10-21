@@ -6,7 +6,7 @@ const Produtos = () => {
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Conheça nossos produtos</h2>
-      <Caixa className={estilos.produtos} id="produtos">
+      <Caixa listaDeClasses={estilos.produtos} id="produtos">
         <article>
           <h3>Produto 1</h3>
           <p>
