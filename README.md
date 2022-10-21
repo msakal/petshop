@@ -71,3 +71,24 @@ COM: <Route exact path="/" component={Home}> </Route>
 Em vez de usar uma <div> em cada página agrupando conteúdos diferentes, isolamos ela num componente genérico (Caixa), aplicamos o CSS uma única vez usando módulo do componente, e programamos através de `props` o carregamento dinâmico do conteúdo (**children**) e de classes adicionais (**listaDeClasses**).
 
 **Dica.:** pode ser usado **destructuring** de objetos nas `props`.
+
+### Versão usando map - ListaPosts.jsx
+
+1.  return (
+  <div className={estilos.lista_posts}>
+    {posts.map(({ id, titulo, subtitulo }) => (
+      <article key={id} className={estilos.post}>
+      <h3>{titulo}</h3>
+      <p>{subtitulo}</p>
+    </article>
+    ))}
+  </div>
+);
+
+2.  return (
+   <div className={estilos.lista_posts}>
+      {posts.map(({ id, titulo, subtitulo }) => (
+         <Artigo key={id} titulo={titulo} subtitulo={subtitulo}></Artigo>
+      ))}
+   </div>
+);
