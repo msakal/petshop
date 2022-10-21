@@ -65,3 +65,9 @@ COM: <Route exact path="/" component={Home}> </Route>
 # NavLink
 
 - deixa a página assincroma, não fica recarregando a cada clique no componente.
+
+### Criação de um componente de interface chamado Caixa
+
+Em vez de usar uma <div> em cada página agrupando conteúdos diferentes, isolamos ela num componente genérico (Caixa), aplicamos o CSS uma única vez usando módulo do componente, e programamos através de `props` o carregamento dinâmico do conteúdo (**children**) e de classes adicionais (**listaDeClasses**).
+
+**Dica.:** pode ser usado **destructuring** de objetos nas `props`.
