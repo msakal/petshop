@@ -56,3 +56,21 @@ h2 {
   box-shadow: var(--sombra-box);
   border-radius: var(--borda-arredondada);
 }
+
+.limitador {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Estilos para áreas genéricas */
+#sobre,
+#produtos,
+#contato,
+#pagina404 {
+  width: 100%;
+  background-color: #f7f7f7;
+  box-shadow: var(--sombra-box);
+  border-radius: var(--borda-arredondada);
+  padding: 1rem;
+}
