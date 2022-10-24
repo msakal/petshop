@@ -95,6 +95,16 @@ Em vez de usar uma <div> em cada página agrupando conteúdos diferentes, isolam
 
 ---
 
-# criando API
+# Criando API
 
 - json-server (pacote para instalação) precisa ser executado via prompt (node.js)
+  - npm install -g json-server
+  - **Executando** // (para iniciar)
+  - C:\Users\marcello.santunes\Desktop\petshop>json-server --watch db.json --port 2112
+- Para facilitar, dentro do arquivo package.json, do `scripts`, adicione a nova propriedade para ser chamado para execução automática.
+  - Para executar, basta digitar o comando: `npm run api` ,, na linha de comando
+  - Obs: executar, utilize o **Node.js command prompt**
+
+Obs.: É necessário criar um **arquivo.json** em qualquer pasta em sua máquina (no nossocaso, usamos a própria pasta raiz do petshop). Este arquivo deve ser composto por um grande objeto contendo arrays com outros objetos.
+
+- O número da porta, deve ser diferente da 3000 que está sendo utilizada pelo **React**.
