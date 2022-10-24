@@ -13,7 +13,7 @@ const ListaPosts = () => {
   // console.log(servidorApi);
   /* Escluido o array com os post interno para mudarmos a chamada para recuperar as informações da API */
   /* Temporário, para não dar erro na página inicial (array vazio) */
-  const postsTemp = [];
+  /* const postsTemp = []; */
 
   /* Sobre o useEffect.:
   Este hook visa permitir um maior controle sobre *efeitos colaterais* na execução do componente.
