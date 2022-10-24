@@ -92,3 +92,9 @@ Em vez de usar uma <div> em cada página agrupando conteúdos diferentes, isolam
       ))}
    </div>
 );
+
+---
+
+# criando API
+
+- json-server (pacote para instalação) precisa ser executado via prompt (node.js)
