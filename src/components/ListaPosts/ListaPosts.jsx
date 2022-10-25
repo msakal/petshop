@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import servidorApi from "../../api/servidor-api";
 import estilos from "./ListaPosts.module.css";
 import Artigo from "../Artigo";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 
 const ListaPosts = () => {
   /* Iniciamos o state do componente com um array vazio, para posteriormente "preenche-lo" com os dados da API.
   Esta atribuição será feita com auxilio do setPosts. */
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // console.log(servidorApi);
   /* Escluido o array com os post interno para mudarmos a chamada para recuperar as informações da API */
@@ -33,12 +35,18 @@ const ListaPosts = () => {
         const resposta = await fetch(`${servidorApi}/posts`);
         const dados = await resposta.json();
         setPosts(dados);
+        setLoading(false);
       } catch (error) {
         console.log("Deu ruim " + error.message);
       }
     }
     getPosts();
   }, []);
+
+  // return <mark style={{ backgroundColor: "red" }}>carregando...</mark>;
+  if (loading) {
+    return <LoadingDesenho />;
+  }
 
   return (
     <div className={estilos.lista_posts}>

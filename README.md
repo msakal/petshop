@@ -31,6 +31,8 @@ Telas de até o tamanho X (max-width)
 
 ## Emoji - getemoji.com
 
+## imagens animada - https://loading.io/
+
 Usando a seguinte classe.: titulo_secao::before { content: "imagem" }
 
 ## Atalho
