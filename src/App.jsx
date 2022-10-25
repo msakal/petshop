@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 /* Sempre colocar o caminho exato da chamada.. './pasta/componente(s)' */
 import Cabecalho from "./components/Cabecalho/Cabecalho";
@@ -7,6 +7,7 @@ import Produtos from "./pages/Produtos/Produtos";
 import Sobre from "./pages/Sobre/Sobre";
 import Contato from "./pages/Contato/Contato";
 import Pagina404 from "./pages/Pagina404/Pagina404";
+import Post from "./pages/Post/Post";
 
 const App = () => {
   return (
@@ -17,6 +18,14 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+
+            <Route exact path="/posts">
+              <Redirect to="/" />
+            </Route>
+
+            <Route path="/posts/:id">
+              <Post />
             </Route>
 
             <Route path="/produtos">
