@@ -135,3 +135,37 @@ Se não passar a lista (ou seja, se deixar sem []), `useEffect` executará toda 
 Se passar a lista vazia (ou seja, deixar o [] vazio), `useEffect` executará somente no momento que o componente é renderizado pela primeira vez, evitando o loop infinito do callback.
 
 ## CSS: uso da pseudo-classe :has()
+
+## 26/10/2022 - Exercício (Listacategorias)
+
+1. Montar o componente (rafce)
+2. Programar a comunicação com a API para ler os dados do endpoint "categorias"
+3. Manipular os states do componente
+4. Fazer o componente ListaCategorias retornar uma lista com os nomes das categorias (<ul> <li>).
+
+const ListaCategorias = () => {
+
+  <!-- Atribuição do useState para manipular os dados do componente
+  1.paramêtro: verifica qie terá os dados
+  2.paramêtro: função responsável por atualizar (setter)
+  Obs: o que colocamos no useState representa o retorno -->
+
+const [categorias, setCategorias] = useState([]);
+
+useEffect(() => {
+
+<!--  endpoit (caminho)
+ para o 'await', serve como forçar um atraso na resposta com servidor -->
+
+try {
+const resposta = await fetch(`${servidorApi}/categorias`);
+const dados = await resposta.json();
+
+<!-- Precisamos passar os dados capturador da API para o state do componente via Setter (obrigatório) -->
+
+setCategorias(dados);
+} catch {}
+
+}, []);
+
+}
