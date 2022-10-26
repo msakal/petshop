@@ -133,3 +133,5 @@ Recebe dois parâmetros:
 Se não passar a lista (ou seja, se deixar sem []), `useEffect` executará toda vez que o componente for renderizado. Portanto, o callback se torna um loop infinito.
 
 Se passar a lista vazia (ou seja, deixar o [] vazio), `useEffect` executará somente no momento que o componente é renderizado pela primeira vez, evitando o loop infinito do callback.
+
+## CSS: uso da pseudo-classe :has()
