@@ -50,16 +50,25 @@ const ListaPosts = ({ url }) => {
 
   // return <mark style={{ backgroundColor: "red" }}>carregando...</mark>;
   if (loading) {
-    return <LoadingDesenho />;
+    return <LoadingDesenho ldNome="Posts.." />;
   }
 
-  return (
-    <div className={estilos.lista_posts}>
-      {posts.map(({ id, titulo, subtitulo }) => (
-        <Artigo key={id} id={id} titulo={titulo} subtitulo={subtitulo}></Artigo>
-      ))}
-    </div>
-  );
+  if (!posts.length == 0) {
+    return (
+      <div className={estilos.lista_posts}>
+        {posts.map(({ id, titulo, subtitulo }) => (
+          <Artigo
+            key={id}
+            id={id}
+            titulo={titulo}
+            subtitulo={subtitulo}
+          ></Artigo>
+        ))}
+      </div>
+    );
+  } else {
+    return <h2 className={estilos.centralizar}>Não há posts... </h2>;
+  }
 };
 
 export default ListaPosts;

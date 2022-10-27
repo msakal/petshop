@@ -11,10 +11,10 @@ import estilos from "./LoadingDesenho.module.css";
   );
 } */
 
-function LoadingDesenho() {
+function LoadingDesenho({ ldNome }) {
   return (
     <div className={estilos.loading}>
-      <h2>Carregando...</h2>
+      <h2>{ldNome}</h2>
       <img src={imagemLoading} alt="" />
     </div>
   );

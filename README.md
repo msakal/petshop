@@ -169,3 +169,9 @@ setCategorias(dados);
 }, []);
 
 }
+
+### Desafios:
+
+- Fazer o loading exibir, acima do Pacman/imagem, mensagens personalizadas de acordo com o que está sendo carregado pelo loading (posts.., categorias.., dados do post..).
+- Destacar o link/categoria ativa (css adicional).
+- Exibir uma mensagem "Não há posts" quando for o caso.
