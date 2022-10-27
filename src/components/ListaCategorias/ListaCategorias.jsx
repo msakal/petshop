@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import servidorApi from "../../api/servidor-api";
 
 import estilos from "./ListaCategorias.module.css";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 
 const ListaCategorias = () => {
   const [categorias, setCategorias] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getCategorias() {
@@ -13,6 +15,7 @@ const ListaCategorias = () => {
         const resposta = await fetch(`${servidorApi}/categorias`);
         const dados = await resposta.json();
         setCategorias(dados);
+        setLoading(false);
       } catch (error) {
         console.log("Deu ruim " + error.message);
       }
@@ -22,6 +25,10 @@ const ListaCategorias = () => {
 
     getCategorias();
   }, []);
+
+  if (loading) {
+    return <LoadingDesenho />;
+  }
 
   return (
     <div className={estilos.lista_categorias}>
