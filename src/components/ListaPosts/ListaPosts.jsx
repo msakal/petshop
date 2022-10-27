@@ -53,7 +53,7 @@ const ListaPosts = ({ url }) => {
     return <LoadingDesenho ldNome="Posts.." />;
   }
 
-  if (!posts.length == 0) {
+  if (!posts.length === 0) {
     return (
       <div className={estilos.lista_posts}>
         {posts.map(({ id, titulo, subtitulo }) => (

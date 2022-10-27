@@ -1,5 +1,4 @@
 import imagemLoading from "../../assets/images/loading.svg";
-import Caixa from "../Caixa/Caixa";
 import estilos from "./LoadingDesenho.module.css";
 
 /* function LoadingDesenho() {
