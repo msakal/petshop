@@ -7,7 +7,7 @@ const Contato = () => {
     <section>
       <h2 className={estilos.titulo_secao}>Fale Conosco</h2>
       <Caixa>
-        <form method="post">
+        <form className={estilos.formulario} method="post">
           <div>
             <TextField
               label="Nome"

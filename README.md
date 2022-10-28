@@ -19,6 +19,13 @@ Arquivos de módulo devem ser nomeados como `Componente.module.css`.
 
 A importação de módulos CSS deve ser feita com `import "nome" form "caminho-do-modulo"`.
 
+### seletor CSS
+
+- no caso exemplificado, o sinal de maior (>), só aplicará no descendente direto (ao .formulario).
+  .formulario > div {
+  margin-bottom: 0.5rem;
+  }
+
 ## Sobre Media Query
 
 ### Mobile First:
