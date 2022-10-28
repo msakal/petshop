@@ -175,3 +175,10 @@ setCategorias(dados);
 - Fazer o loading exibir, acima do Pacman/imagem, mensagens personalizadas de acordo com o que está sendo carregado pelo loading (posts.., categorias.., dados do post..).
 - Destacar o link/categoria ativa (css adicional).
 - Exibir uma mensagem "Não há posts" quando for o caso.
+
+## formulário contato
+
+- biblioteca MUI (https://mui.com/pt/)
+  - site acesso para instalação (https://mui.com/pt/material-ui/getting-started/installation/)
+  - comnado instalação, nesse caso são 3 bibliotecas (npm install @mui/material @emotion/react @emotion/styled)
+  - levar a dependência de fonte para o index (public)
