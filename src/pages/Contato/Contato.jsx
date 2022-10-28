@@ -17,6 +17,11 @@ const Contato = () => {
     setMensagem(event.target.value);
   };
 
+  /* Hook useState para manipular os estados dos dados do componente */
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
   const enviarContato = async (event) => {
     event.preventDefault();
     /* console.log(nome, email, mensagem); */
@@ -37,10 +42,8 @@ const Contato = () => {
     }
   };
 
-  /* Hook useState para manipular os estados dos dados do componente */
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  /* let desabilitado = nome === "" || email === "" || mensagem === ""; */
+  let desabilitado = !nome || !email || !mensagem;
 
   return (
     <section>
@@ -90,7 +93,7 @@ const Contato = () => {
           </div>
 
           <div>
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="contained" disabled={desabilitado}>
               Enviar mensagem
             </Button>
           </div>
