@@ -30,6 +30,7 @@ const ListaPosts = ({ url }) => {
   a primeira vez evitando o loop infinito do callback.
   */
   useEffect(() => {
+    setLoading(true);
     async function getPosts() {
       try {
         /* const resposta = await fetch(`${servidorApi}/posts`); */
