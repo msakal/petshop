@@ -71,5 +71,12 @@
       "categoria": "bem-estar"
     }
   ],
-  "contatos": []
+  "contatos": [
+    {
+      "nome": "MarcelloSA",
+      "email": "marcello@hotmail.com",
+      "mensagem": "Teste Envio de msg",
+      "id": 1
+    }
+  ]
 }

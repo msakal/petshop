@@ -1,5 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import serverApi from "../../api/servidor-api";
+
 import Caixa from "../../components/Caixa/Caixa";
 import estilos from "./Contato.module.css";
 
@@ -15,16 +17,40 @@ const Contato = () => {
     setMensagem(event.target.value);
   };
 
+  const enviarContato = async (event) => {
+    event.preventDefault();
+    /* console.log(nome, email, mensagem); */
+    /* Script para envio dos dados para a API */
+    const opcoes = {
+      method: "POST",
+      body: JSON.stringify({ nome, email, mensagem }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    };
+
+    try {
+      await fetch(`${serverApi}/contatos`, opcoes);
+      alert("Dados enviados!");
+    } catch (error) {
+      console.log("Deu ruim: " + error.message);
+    }
+  };
+
   /* Hook useState para manipular os estados dos dados do componente */
-  const { nome, setNome } = useState("");
-  const { email, setEmail } = useState("");
-  const { mensagem, setMensagem } = useState("");
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
 
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Fale Conosco</h2>
       <Caixa>
-        <form className={estilos.formulario} method="post">
+        <form
+          onSubmit={enviarContato}
+          className={estilos.formulario}
+          method="post"
+        >
           <div>
             <TextField
               onChange={inputNome}
