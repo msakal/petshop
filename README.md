@@ -189,3 +189,22 @@ setCategorias(dados);
   - site acesso para instalação (https://mui.com/pt/material-ui/getting-started/installation/)
   - comnado instalação, nesse caso são 3 bibliotecas (npm install @mui/material @emotion/react @emotion/styled)
   - levar a dependência de fonte para o index (public)
+
+## Recuperando o IP da máquina
+
+- ipconfig (digitar no prompt)
+- Endereço IPv4. . . . . . . . . . . . . . . : 10.20.45.28
+- No celular -> digitar o 'ip:porta'
+
+# Para usar a API via rede local
+
+### Alterando localhost para IP
+
+1. Alteração (package.json)
+   Altere a linha : `"api": "json-server --watch db.json --port 2112"`
+   para.: `"api": "json-server --host 10.20.45.28 db.json --port 2112"`
+
+2. Alteração (api/servidor-api.js)
+   no server-api.js: `const serverApi = `http://localhost:${porta}`;`
+   para: `const serverApi = `http://10.20.45.28:${porta}`;`
+   - Após alteração, para o servidor `prompt` e reiniciar,, >> npm run api
