@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import serverApi from "../../api/servidor-api";
 
 import Caixa from "../../components/Caixa/Caixa";
@@ -22,6 +23,9 @@ const Contato = () => {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
+  /* Hook necessário para criar uma navegação/redirecionamento manualmente (ous seja, sem depender dos routes) */
+  let history = useHistory();
+
   const enviarContato = async (event) => {
     event.preventDefault();
     /* console.log(nome, email, mensagem); */
@@ -37,6 +41,7 @@ const Contato = () => {
     try {
       await fetch(`${serverApi}/contatos`, opcoes);
       alert("Dados enviados!");
+      history.push("/"); // Redirecionamento para a "home/blog".
     } catch (error) {
       console.log("Deu ruim: " + error.message);
     }
@@ -62,7 +67,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Você deve digitar o nome"
+              helperText={!nome ? "Você deve digitar o nome" : ""}
             />
           </div>
 
@@ -74,7 +79,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Informe um e-mail para contato"
+              helperText={!email ? "Informe um e-mail para contato" : ""}
             />
           </div>
 
@@ -86,7 +91,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Fale o que você quiser"
+              helperText={!mensagem ? "Fale o que você quiser" : ""}
               multiline
               rows={6}
             />
