@@ -208,3 +208,14 @@ setCategorias(dados);
    no server-api.js: `const serverApi = `http://localhost:${porta}`;`
    para: `const serverApi = `http://10.20.45.28:${porta}`;`
    - Após alteração, para o servidor `prompt` e reiniciar,, >> npm run api
+
+## Tornando o app React em uma aplicação instalável no dispositivo (PWA)
+
+### Configurar arquivo (/public) manifest.json
+
+Um **arquivo de manifest** é um arquivo JSON contendo informações sobre seu aplicativo web e, quando combinado com um **Service Worker**, permite a instalação do aplicativo em qualquer dispositivo compativel.
+
+### Configurar/Programar um Service Worken JavaScript
+
+- Um **Service Worker** (Trabalhador/Manipulador de Serviços) é um script que o navegador executa em segundo plano separado da aplicação web, possibilitando recursos que não precisam de uma página ou interações com o usuário.
+- O servive Worker está no centro de muitos recursos das chamadas **PWAs (Progressive Web Applications)**, tais como: cache offline, sincronização em segundo plano notificações, execução independente do navegador mobile etc.
