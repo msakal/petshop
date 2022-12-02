@@ -12,9 +12,23 @@ const ListaCategorias = () => {
   useEffect(() => {
     async function getCategorias() {
       try {
-        const resposta = await fetch(`${servidorApi}/categorias`);
+        /* const resposta = await fetch(`${servidorApi}/categorias`); */
+        const resposta = await fetch(`${servidorApi}/categorias.json`);
+
         const dados = await resposta.json();
-        setCategorias(dados);
+
+        let listaCategorias = [];
+        for (const categoria in dados) {
+          const objetoCategoria = {
+            id: categoria, // a chave/string gerada pelo firebase será como um id
+            nome: dados[categoria].nome,
+          };
+          listaCategorias.push(objetoCategoria);
+        }
+
+        /* setCategorias(dados); */
+        setCategorias(listaCategorias);
+
         setLoading(false);
       } catch (error) {
         console.log("Deu ruim " + error.message);
