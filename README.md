@@ -219,3 +219,11 @@ Um **arquivo de manifest** é um arquivo JSON contendo informações sobre seu a
 
 - Um **Service Worker** (Trabalhador/Manipulador de Serviços) é um script que o navegador executa em segundo plano separado da aplicação web, possibilitando recursos que não precisam de uma página ou interações com o usuário.
 - O servive Worker está no centro de muitos recursos das chamadas **PWAs (Progressive Web Applications)**, tais como: cache offline, sincronização em segundo plano notificações, execução independente do navegador mobile etc.
+
+## link do firebase:
+
+- https://petshop-656ec-default-rtdb.firebaseio.com/
+
+### acessando:
+
+- https://console.firebase.google.com/project/petshop-656ec/database/petshop-656ec-default-rtdb/data/~2F

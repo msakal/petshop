@@ -34,9 +34,27 @@ const ListaPosts = ({ url }) => {
     async function getPosts() {
       try {
         /* const resposta = await fetch(`${servidorApi}/posts`); */
-        const resposta = await fetch(`${servidorApi}/${url || "posts"}`);
-        const dados = await resposta.json();
-        setPosts(dados);
+        /* const resposta = await fetch(`${servidorApi}/${url || "posts"}`); */
+        const resposta = await fetch(`${servidorApi}/posts.json`); // recuperando diretamente firebase
+        const dados = await resposta.json(); // OBJETÃO DE DADOS
+
+        /*  console.log(dados); */
+
+        let listaDePosts = [];
+        for (const post in dados) {
+          const objetoPost = {
+            id: post, // a chave/string gerada pelo firebase será como um id
+            titulo: dados[post].titulo,
+            subtitulo: dados[post].subtitulo,
+            descricao: dados[post].descricao,
+            categoria: dados[post].categoria,
+          };
+          listaDePosts.push(objetoPost);
+        }
+
+        /* setPosts(dados); */
+        setPosts(listaDePosts);
+
         setLoading(false);
       } catch (error) {
         console.log("Deu ruim " + error.message);
