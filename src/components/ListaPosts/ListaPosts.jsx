@@ -6,7 +6,8 @@ import estilos from "./ListaPosts.module.css";
 import Artigo from "../Artigo";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 
-const ListaPosts = ({ url }) => {
+/* const ListaPosts = ({ url }) => { */
+const ListaPosts = ({ categoria }) => {
   /* Iniciamos o state do componente com um array vazio, para posteriormente "preenche-lo" com os dados da API.
   Esta atribuição será feita com auxilio do setPosts. */
   const [posts, setPosts] = useState([]);
@@ -49,7 +50,20 @@ const ListaPosts = ({ url }) => {
             descricao: dados[post].descricao,
             categoria: dados[post].categoria,
           };
+
           listaDePosts.push(objetoPost);
+
+          /* Se categoria for escolhida/clicada */
+          if (categoria) {
+            /* então vamos fazer uma lista de posts com filtro de categoria */
+
+            /* A cada vez que o loop é executado, pegamos a categoria de cada post e comparamos com a categoria escolhido pelo usuário */
+            listaDePosts = listaDePosts.filter(
+              /* Se esta comparação for verdadeira, guardamos o post na listaPosts.
+              Caso contrário, é descartado pelo filtro. */
+              (cadaPost) => cadaPost.categoria === categoria
+            );
+          }
         }
 
         /* setPosts(dados); */
@@ -65,7 +79,8 @@ const ListaPosts = ({ url }) => {
     
     Desta forma, o useEffect "entende" que ele deve executar novamente as suas ações (neste caso, executar novamente o fetch na API)
     */
-  }, [url]);
+    /* }, [url]); */
+  }, [categoria]);
 
   // return <mark style={{ backgroundColor: "red" }}>carregando...</mark>;
   if (loading) {
