@@ -39,7 +39,8 @@ const Contato = () => {
     };
 
     try {
-      await fetch(`${serverApi}/contatos`, opcoes);
+      /* await fetch(`${serverApi}/contatos`, opcoes); */
+      await fetch(`${serverApi}/contatos.json`, opcoes);
       alert("Dados enviados!");
       history.push("/"); // Redirecionamento para a "home/blog".
     } catch (error) {
