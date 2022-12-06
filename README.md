@@ -227,3 +227,15 @@ Um **arquivo de manifest** é um arquivo JSON contendo informações sobre seu a
 ### acessando:
 
 - https://console.firebase.google.com/project/petshop-656ec/database/petshop-656ec-default-rtdb/data/~2F
+
+## Publicação
+
+# Executar o comando
+
+- npm run build (é criando automaticamente no projeto a pasta /build "tbm já vai para o .gitignore")
+
+  - https://cra.link/deployment (link com a documentação)
+
+- Para acessar: serve -s build
+
+- npm install -g firebase-tools
